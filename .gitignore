@@ -191,6 +191,8 @@ uv.lock
 # XRoboToolkit-PC-Service-Pybind
 xrobotoolkit_sdk.cpython-*-*-*.so
 teleop_vids/
-*.code-workspace.venv_genmo/
+*.code-workspace
+.venv_genmo/
 .venv_teleop/
 *.mp4
+*.trt
