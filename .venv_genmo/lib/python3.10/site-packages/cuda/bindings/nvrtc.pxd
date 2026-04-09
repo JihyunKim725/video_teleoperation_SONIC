@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: Copyright (c) 2021-2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: LicenseRef-NVIDIA-SOFTWARE-LICENSE
+
+# This code was automatically generated with version 12.9.0. Do not modify it directly.
+cimport cuda.bindings.cynvrtc as cynvrtc
+
+include "_lib/utils.pxd"
+
+cdef class nvrtcProgram:
+    """ nvrtcProgram is the unit of compilation, and an opaque handle for a program.
+
+    To compile a CUDA program string, an instance of nvrtcProgram must be created first with nvrtcCreateProgram, then compiled with nvrtcCompileProgram.
+
+    Methods
+    -------
+    getPtr()
+        Get memory address of class instance
+
+    """
+    cdef cynvrtc.nvrtcProgram  _pvt_val
+    cdef cynvrtc.nvrtcProgram* _pvt_ptr

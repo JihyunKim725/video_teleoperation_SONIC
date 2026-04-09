@@ -1,0 +1,136 @@
+Metadata-Version: 2.4
+Name: hydra_zen
+Version: 0.16.0
+Summary: Configurable, reproducible, and scalable workflows in Python, via Hydra
+Author-email: Ryan Soklaski <rsoklaski@gmail.com>, Justin Goodwin <jgoodwin@ll.mit.edu>
+Maintainer-email: Justin Goodwin <jgoodwin@ll.mit.edu>
+License: MIT
+Project-URL: Homepage, https://mit-ll-responsible-ai.github.io/hydra-zen/
+Project-URL: Bug Reports, https://github.com/mit-ll-responsible-ai/hydra-zen/issues
+Project-URL: Source, https://github.com/mit-ll-responsible-ai/hydra-zen
+Keywords: machine learning,research,configuration,scalable,reproducible,yaml,Hydra,dataclass
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Classifier: Topic :: Scientific/Engineering
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: hydra-core>=1.2.0
+Requires-Dist: omegaconf>=2.2.3
+Requires-Dist: typing-extensions!=4.6.0,>=4.1.0
+Provides-Extra: test
+Requires-Dist: pytest>=3.9; extra == "test"
+Requires-Dist: hypothesis>=6.28.0; extra == "test"
+Requires-Dist: pytest-trio>=0.8.0; extra == "test"
+Provides-Extra: pydantic
+Requires-Dist: pydantic<2.0.0,>=1.10.14; extra == "pydantic"
+Provides-Extra: beartype
+Requires-Dist: beartype>=0.8.0; extra == "beartype"
+Dynamic: license-file
+
+# hydra-zen
+![image](brand/Hydra-Zen_logo_full_filled_bkgrnd_small.png)
+
+
+<p align="center">
+  <a href="https://pypi.python.org/pypi/hydra-zen">
+    <img src="https://img.shields.io/pypi/v/hydra-zen.svg" alt="PyPI" />
+  </a>
+  <a>
+    <img src="https://img.shields.io/badge/python-3.9%20&#8208;%203.14-blue.svg" alt="Python version support" />
+  </a>
+  <a href="https://anaconda.org/conda-forge/hydra-zen">
+    <img src="https://img.shields.io/conda/vn/conda-forge/hydra-zen.svg?logo=conda-forge&label=conda-forge&color=3A3A3A" alt="Conda-forge" />
+  </a>
+  <a href="https://github.com/mit-ll-responsible-ai/hydra-zen/actions?query=workflow%3ATests+branch%3Amain">
+    <img src="https://github.com/mit-ll-responsible-ai/hydra-zen/workflows/Tests/badge.svg" alt="GitHub Actions" />
+  <a href="https://github.com/mit-ll-responsible-ai/hydra-zen/actions?query=workflow%3ATests+branch%3Amain">
+    <img src="https://img.shields.io/badge/coverage-100%25-green.svg" alt="Code Coverage" />
+  <a href="https://github.com/microsoft/pyright/blob/92b4028cd5fd483efcf3f1cdb8597b2d4edd8866/docs/typed-libraries.md#verifying-type-completeness">
+    <img src="https://img.shields.io/badge/type%20completeness-100%25-green.svg" alt="Type-Completeness Score" />
+  <a href="https://hypothesis.readthedocs.io/">
+    <img src="https://img.shields.io/badge/hypothesis-tested-brightgreen.svg" alt="Tested with Hypothesis" />
+  </a>
+  <a href="https://zenodo.org/badge/latestdoi/354130346">
+    <img src="https://zenodo.org/badge/354130346.svg" alt="Cite Us" />
+  </a>
+  <p align="center">
+    A library that facilitates configurable, reproducible, and scalable workflows, using Hydra.
+  </p>
+  <p align="center">
+    Check out our <a href="https://mit-ll-responsible-ai.github.io/hydra-zen/">documentation</a> for more information.
+  </p>
+  <p align="center">
+    Interested in machine learning? Check out our guide <a href="https://mit-ll-responsible-ai.github.io/hydra-zen/tutorials/pytorch_lightning.html">for using PyTorch Lightning with hydra-zen.⚡</a>
+  </p>
+</p>
+
+
+hydra-zen is a Python library that simplifies the process of writing code (research-grade or production-grade) that is:
+
+- **Configurable**: you can configure all aspects of your code from a single interface (the command line or a single Python function).
+- **Repeatable**: each run of your code will be self-documenting; the full configuration of your software is saved alongside your results.
+- **Scalable**: launch multiple runs of your software, be it on your local machine or across multiple nodes on a cluster.
+
+
+**hydra-zen eliminates all hand-written yaml configs from your Hydra project**. It does so by providing functions that [dynamically and automatically](https://mit-ll-responsible-ai.github.io/hydra-zen/api_reference.html#creating-and-working-with-configs) generate dataclass-based configs for your code. It also provides a [custom config-store API](https://mit-ll-responsible-ai.github.io/hydra-zen/api_reference.html#storing-configs) and [task-function wrapper](https://mit-ll-responsible-ai.github.io/hydra-zen/generated/hydra_zen.zen.html#hydra_zen.zen), which help to eliminate most of the Hydra-specific boilerplate from your project.
+
+Learn about hydra-zen [**at a glance**](https://mit-ll-responsible-ai.github.io/hydra-zen/index.html#hydra-zen-at-a-glance).
+  
+## Installation
+`hydra-zen` is lightweight: its only dependencies are `hydra-core` and `typing-extensions`.
+
+```console
+pip install hydra-zen
+```
+
+## Contributing
+
+Before opening a PR to this repo, consider posting an [issue](https://github.com/mit-ll-responsible-ai/hydra-zen/issues) or a [discussion topic](https://github.com/mit-ll-responsible-ai/hydra-zen/discussions) to share your ideas with us. We will work with you to ensure your feature is well-scoped and that your hard work goes to good use.
+
+(See an obvious bug or typo? Go ahead and just open a PR :) )
+
+For further details refer to [these docs](https://github.com/mit-ll-responsible-ai/hydra-zen/blob/main/CONTRIBUTING.md).
+
+
+## Join the Discussion
+
+Share ideas, ask questions, and chat with us over at [hydra-zen's discussion board](https://github.com/mit-ll-responsible-ai/hydra-zen/discussions).
+
+
+## Citation
+
+Using `hydra-zen` for your research? Please cite the following publication:
+
+```
+@article{soklaski2022tools,
+  title={Tools and Practices for Responsible AI Engineering},
+  author={Soklaski, Ryan and Goodwin, Justin and Brown, Olivia and Yee, Michael and Matterer, Jason},
+  journal={arXiv preprint arXiv:2201.05647},
+  year={2022}
+}
+```
+
+## Disclaimer
+
+DISTRIBUTION STATEMENT A. Approved for public release: distribution unlimited.
+
+© 2025 MASSACHUSETTS INSTITUTE OF TECHNOLOGY
+    
+    Subject to FAR 52.227-11 – Patent Rights – Ownership by the Contractor (May 2014)
+    SPDX-License-Identifier: MIT
+    
+This material is based upon work supported by the Under Secretary of Defense for Research and Engineering under Air Force Contract No. FA8702-15-D-0001. Any opinions, findings, conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the Under Secretary of Defense for Research and Engineering.
+
+A portion of this research was sponsored by the United States Air Force Research Laboratory and the United States Air Force Artificial Intelligence Accelerator and was accomplished under Cooperative Agreement Number FA8750-19-2-1000. The views and conclusions contained in this document are those of the authors and should not be interpreted as representing the official policies, either expressed or implied, of the United States Air Force or the U.S. Government. The U.S. Government is authorized to reproduce and distribute reprints for Government purposes notwithstanding any copyright notation herein.
+
+The software/firmware is provided to you on an As-Is basis

@@ -1,0 +1,420 @@
+[0;36m
+╔══════════════════════════════════════════════════════════════════════╗
+║                         G1 DEPLOY LAUNCHER                           ║
+╚══════════════════════════════════════════════════════════════════════╝
+[0m
+[0;34m[Interface Resolution][0m
+Requested mode: sim
+Resolved interface: [0;32mlo[0m
+Environment type:   [0;32msim[0m
+
+[1;33m📋 Simulation mode: CRC check will be disabled[0m
+
+[0;34m[Step 1/4][0m Checking prerequisites...
+
+Checking required model files...
+[0;32m✅ Found: policy/release/model_decoder.onnx[0m
+[0;32m✅ Found: policy/release/model_encoder.onnx[0m
+[0;32m✅ Found: policy/release/observation_config.yaml[0m
+[0;32m✅ Found: planner/target_vel/V2/planner_sonic.onnx[0m
+[0;32m✅ Found: reference/example/[0m
+
+[0;34m[Step 2/4][0m Checking/Installing dependencies...
+[0;32m✅ just is already installed[0m
+[0;32m✅ All essential tools are installed[0m
+
+[0;34m[Step 3/4][0m Setting up environment and building...
+Sourcing environment setup...
+🔧 Setting up G1 Deploy environment...
+✅ ONNX Runtime found at: /opt/onnxruntime
+🔍 Detected: ubuntu on x86_64, using library path: /usr/lib/x86_64-linux-gnu
+✅ ROS2 humble found at /opt/ros/humble - system manages all ROS2 dependencies
+🔧 Removing ROS2 library paths to prevent CycloneDDS conflict...
+✅ ROS2 library paths removed from LD_LIBRARY_PATH
+✅ FastRTPS production profile configured
+✅ TensorRT environment configured
+🔧 Setting up CUDA environment...
+✅ CUDA toolkit found: CUDAToolkit_ROOT already set to /usr/local/cuda
+✅ Using CUDA libraries from toolkit (prioritized over system runtime libs)
+✅ Git LFS configured
+
+🔍 Verifying essential tools:
+✅ cmake: /usr/bin/cmake
+✅ clang: /usr/bin/clang
+✅ just: /usr/local/bin/just
+✅ git: /usr/bin/git
+
+🎉 Environment setup complete!
+
+📝 You can now run:
+   just build    # Build the project
+   just --list   # See all available commands
+
+Building the project...
+Configuring the build system...
+-- C++ Compiler: /usr/bin/c++
+-- C++ Compiler ID: GNU
+-- C++ Compiler Version: 11.4.0
+-- 🎯 Using CUDAToolkit_ROOT from environment: /usr/local/cuda
+-- 🔍 Using CUDA_HOME from environment: /usr/local/cuda
+-- ✅ CUDA Toolkit found: version 12.4.131
+--    CUDA Root: /usr/local/cuda
+--    CUDA Libraries: /usr/local/cuda/lib64
+--    🔧 CUDA 12.x detected
+-- Current system architecture: x86_64
+-- Importing: /workspace/g1_deploy/thirdparty/unitree_sdk2/thirdparty/lib/x86_64/libddsc.so
+-- Importing: /workspace/g1_deploy/thirdparty/unitree_sdk2/thirdparty/lib/x86_64/libddscxx.so
+-- Unitree SDK library found at: /workspace/g1_deploy/thirdparty/unitree_sdk2/lib/x86_64/libunitree_sdk2.a
+-- Importing: /workspace/g1_deploy/thirdparty/unitree_sdk2/lib/x86_64/libunitree_sdk2.a
+-- blah = /workspace/g1_deploy/src/TRTInference/../../cmake
+-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- ✅ msgpack found at: /usr/include
+-- ✅ x86_64 detected - building without DLA support
+--    Using CUDA library path: /usr/local/cuda/lib64
+-- ✅ ZMQ support enabled for main executable
+-- ✅ Added zmq_pose_subscriber_test (ZMQ found)
+-- ✅ Added zmq_python_sender_test (ZMQ found)
+-- Configuring ROS2 support...
+-- 📦 Found ROS2 humble at /opt/ros/humble
+-- ✅ ROS2 configuration: 39 libraries discovered
+-- ✅ ROS2 test executable configured
+-- ✅ FastRTPS profile copied for test deployment
+-- ✅ ROS2InputHandler support enabled with msgpack
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workspace/g1_deploy/build
+Building the project...
+Consolidate compiler generated dependencies of target freq_test
+Consolidate compiler generated dependencies of target zmq_pose_subscriber_test
+Consolidate compiler generated dependencies of target zmq_python_sender_test
+Consolidate compiler generated dependencies of target gtest
+Consolidate compiler generated dependencies of target TRTInference
+Consolidate compiler generated dependencies of target g1_deploy_shared
+Consolidate compiler generated dependencies of target test_ros2
+Consolidate compiler generated dependencies of target audio_thread
+[ 20%] Built target zmq_pose_subscriber_test
+[ 20%] Built target freq_test
+[ 20%] Built target gtest
+[ 26%] Built target zmq_python_sender_test
+[ 33%] Built target TRTInference
+Consolidate compiler generated dependencies of target gmock
+[ 50%] Built target g1_deploy_shared
+Consolidate compiler generated dependencies of target gtest_main
+[ 56%] Built target audio_thread
+[ 63%] Built target test_ros2
+[ 70%] Built target gmock
+[ 76%] Built target gtest_main
+Consolidate compiler generated dependencies of target g1_deploy_onnx_ref
+Consolidate compiler generated dependencies of target gmock_main
+Consolidate compiler generated dependencies of target run_tests
+[ 83%] Built target gmock_main
+[ 93%] Built target run_tests
+[100%] Built target g1_deploy_onnx_ref
+
+[0;34m[Step 4/4][0m Ready to deploy!
+
+[0;36m═══════════════════════════════════════════════════════════════════════[0m
+[0;36m                         DEPLOYMENT CONFIGURATION                       [0m
+[0;36m═══════════════════════════════════════════════════════════════════════[0m
+
+  Environment:        [0;32msim[0m
+  Network Interface:  [0;32mlo[0m
+  Decoder Model:      [0;32mpolicy/release/model_decoder.onnx[0m
+  Encoder Model:      [0;32mpolicy/release/model_encoder.onnx[0m
+  Motion Data:        [0;32mreference/example/[0m
+  Obs Config:         [0;32mpolicy/release/observation_config.yaml[0m
+  Planner:            [0;32mplanner/target_vel/V2/planner_sonic.onnx[0m
+  Input Type:         [0;32mzmq[0m
+  Output Type:        [0;32mall[0m
+  ZMQ Host:           [0;32mlocalhost[0m
+  Extra Args:         [0;32m--disable-crc-check[0m
+
+[0;36m═══════════════════════════════════════════════════════════════════════[0m
+
+[1;33mThe following command will be executed:[0m
+
+[0;34mjust run g1_deploy_onnx_ref lo policy/release/model_decoder.onnx reference/example/ \033[0m
+[0;34m    --obs-config policy/release/observation_config.yaml \033[0m
+[0;34m    --encoder-file policy/release/model_encoder.onnx \033[0m
+[0;34m    --planner-file planner/target_vel/V2/planner_sonic.onnx \033[0m
+[0;34m    --input-type zmq \033[0m
+[0;34m    --output-type all \033[0m
+[0;34m    --zmq-host localhost[0m
+[0;34m    --disable-crc-check[0m
+
+[0;36m═══════════════════════════════════════════════════════════════════════[0m
+
+[1;33m📋 This will start the simulation control system.[0m
+
+
+[0;32m🚀 Starting deployment...[0m
+
+[DEBUG] Program starting...
+[DEBUG] Arguments validated...
+[INFO] Using observation config: policy/release/observation_config.yaml
+[INFO] Using encoder file: policy/release/model_encoder.onnx
+[INFO] Using planner file: planner/target_vel/V2/planner_sonic.onnx
+[INFO] Using input type: zmq
+[INFO] Using output type: all
+[INFO] CRC checking disabled for MuJoCo simulation
+[DEBUG] Creating G1Deploy object...
+Reading motion data from CSV files in: reference/example/
+Found 13 motion folders
+✓ Loaded dance_in_da_party_001__A464 (497 timesteps)
+✓ Loaded macarena_001__A545 (1375 timesteps)
+✓ Loaded neutral_kick_R_001__A543 (165 timesteps)
+✓ Loaded walking_quip_360_R_002__A428 (455 timesteps)
+✓ Loaded tired_one_leg_jumping_R_001__A359 (500 timesteps)
+✓ Loaded tired_one_leg_jumping_R_001__A359_M (500 timesteps)
+✓ Loaded walking_quip_360_R_002__A428_M (455 timesteps)
+✓ Loaded dance_in_da_party_001__A464_M (497 timesteps)
+✓ Loaded tired_forward_lunge_R_001__A359_M (810 timesteps)
+✓ Loaded forward_lunge_R_001__A359_M (399 timesteps)
+✓ Loaded macarena_001__A545_M (1375 timesteps)
+✓ Loaded squat_001__A359 (424 timesteps)
+✓ Loaded neutral_kick_R_001__A543_M (165 timesteps)
+✓ Motion data loaded successfully!
+Started with motion: dance_in_da_party_001__A464 (paused at frame 0)
+Loading policy model...
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(35)]: Loaded engine size: 38 MiB
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +0, now: CPU 0, GPU 38 (MiB)
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(475)]: INPUT Tensor: obs_dict [1, 994]. 994 elements of type FLOAT
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(475)]: OUTPUT Tensor: action [1, 29]. 29 elements of type FLOAT
+✓ Successfully converted ONNX to TRT: policy_model_decoder.trt
+✓ Policy engine initialized successfully!
+  Model: policy/release/model_decoder.onnx
+  Input dimension: 994
+  Action dimension: 29
+  Input tensor: obs_dict
+  Output tensor: action
+  Precision: FP32
+Capturing control policy CUDA graph...
+✓ Control policy CUDA graph captured successfully!
+✓ Policy model loaded successfully!
+Loading observation configuration...
+Using observation config file: policy/release/observation_config.yaml
+Parsing observation config file: policy/release/observation_config.yaml
+Found observations section at line 5
+  Parsed observation: token_state -> enabled
+  Parsed observation: his_base_angular_velocity_10frame_step1 -> enabled
+  Parsed observation: his_body_joint_positions_10frame_step1 -> enabled
+  Parsed observation: his_body_joint_velocities_10frame_step1 -> enabled
+  Parsed observation: his_last_actions_10frame_step1 -> enabled
+  Parsed observation: his_gravity_dir_10frame_step1 -> enabled
+Found encoder section at line 25
+  Encoder dimension: 64
+  Encoder use_fp16: false
+  Found encoder_observations subsection
+    Encoder obs: encoder_mode_4 -> enabled
+    Encoder obs: motion_joint_positions_10frame_step5 -> enabled
+    Encoder obs: motion_joint_velocities_10frame_step5 -> enabled
+    Encoder obs: motion_root_z_position_10frame_step5 -> enabled
+    Encoder obs: motion_root_z_position -> enabled
+    Encoder obs: motion_anchor_orientation -> enabled
+    Encoder obs: motion_anchor_orientation_10frame_step5 -> enabled
+    Encoder obs: motion_joint_positions_lowerbody_10frame_step5 -> enabled
+    Encoder obs: motion_joint_velocities_lowerbody_10frame_step5 -> enabled
+    Encoder obs: vr_3point_local_target -> enabled
+    Encoder obs: vr_3point_local_orn_target -> enabled
+    Encoder obs: smpl_joints_10frame_step1 -> enabled
+    Encoder obs: smpl_anchor_orientation_10frame_step1 -> enabled
+    Encoder obs: motion_joint_positions_wrists_10frame_step1 -> enabled
+  Found encoder_modes subsection (after encoder_observations)
+    Found mode: g1
+      Mode ID: 0
+      Found required_observations for mode g1
+        - encoder_mode_4
+        - motion_joint_positions_10frame_step5
+        - motion_joint_velocities_10frame_step5
+        - motion_anchor_orientation_10frame_step5
+    Saved mode 'g1' with 4 observations
+    Found mode: teleop
+      Mode ID: 1
+      Found required_observations for mode teleop
+        - encoder_mode_4
+        - motion_joint_positions_lowerbody_10frame_step5
+        - motion_joint_velocities_lowerbody_10frame_step5
+        - vr_3point_local_target
+        - vr_3point_local_orn_target
+        - motion_anchor_orientation
+    Saved mode 'teleop' with 6 observations
+    Found mode: smpl
+      Mode ID: 2
+      Found required_observations for mode smpl
+        - encoder_mode_4
+        - smpl_joints_10frame_step1
+        - smpl_anchor_orientation_10frame_step1
+        - motion_joint_positions_wrists_10frame_step1
+    Saved mode 'smpl' with 4 observations
+✓ Token state observation validated with encoder configuration
+Successfully parsed 6 observations
+Encoder config found with 14 input observations
+✓ Token state buffer initialized (size: 64)
+Initializing encoder...
+Loading encoder model...
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(35)]: Loaded engine size: 47 MiB
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MS] Running engine with multi stream info
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MS] Number of aux streams is 2
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MS] Number of total worker streams is 3
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MS] The main stream provided by execute/enqueue calls is the first worker stream
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +1, now: CPU 0, GPU 86 (MiB)
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(475)]: INPUT Tensor: obs_dict [1, 1762]. 1762 elements of type FLOAT
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(475)]: OUTPUT Tensor: encoded_tokens [1, 64]. 64 elements of type FLOAT
+✓ Encoder initialized successfully!
+  Model: policy/release/model_encoder.onnx
+  Input dimension: 1762
+  Token dimension: 64
+  Input tensor: obs_dict
+  Output tensor: encoded_tokens
+Capturing encoder CUDA graph...
+✓ Encoder CUDA graph captured successfully!
+✓ Encoder model loaded successfully!
+Setting encode_mode for 13 loaded reference motions...
+  Motion 'dance_in_da_party_001__A464' encode_mode set to: 0
+  Motion 'macarena_001__A545' encode_mode set to: 0
+  Motion 'neutral_kick_R_001__A543' encode_mode set to: 0
+  Motion 'walking_quip_360_R_002__A428' encode_mode set to: 0
+  Motion 'tired_one_leg_jumping_R_001__A359' encode_mode set to: 0
+  Motion 'tired_one_leg_jumping_R_001__A359_M' encode_mode set to: 0
+  Motion 'walking_quip_360_R_002__A428_M' encode_mode set to: 0
+  Motion 'dance_in_da_party_001__A464_M' encode_mode set to: 0
+  Motion 'tired_forward_lunge_R_001__A359_M' encode_mode set to: 0
+  Motion 'forward_lunge_R_001__A359_M' encode_mode set to: 0
+  Motion 'macarena_001__A545_M' encode_mode set to: 0
+  Motion 'squat_001__A359' encode_mode set to: 0
+  Motion 'neutral_kick_R_001__A543_M' encode_mode set to: 0
+Planner motion encode_mode set to: 0
+LocalMotionPlannerBase constructor
+config_.version: 2
+config_.motion_look_ahead_steps: 2
+config_.default_height: 0.78874
+config_.initial_random_seed: 1234
+Available modes number: 27
+Initialize Engine...
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(35)]: Loaded engine size: 709 MiB
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MS] Running engine with multi stream info
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MS] Number of aux streams is 3
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MS] Number of total worker streams is 4
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MS] The main stream provided by execute/enqueue calls is the first worker stream
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +1, now: CPU 0, GPU 793 (MiB)
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(475)]: INPUT Tensor: context_mujoco_qpos [1, 4, 36]. 144 elements of type FLOAT
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(475)]: INPUT Tensor: target_vel [1]. 1 elements of type FLOAT
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(475)]: INPUT Tensor: mode [1]. 1 elements of type INT64
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(475)]: INPUT Tensor: movement_direction [1, 3]. 3 elements of type FLOAT
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(475)]: INPUT Tensor: facing_direction [1, 3]. 3 elements of type FLOAT
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(475)]: INPUT Tensor: random_seed [1]. 1 elements of type INT64
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(475)]: INPUT Tensor: has_specific_target [1, 1]. 1 elements of type INT64
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(475)]: INPUT Tensor: specific_target_positions [1, 4, 3]. 12 elements of type FLOAT
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(475)]: INPUT Tensor: specific_target_headings [1, 4]. 4 elements of type FLOAT
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(475)]: INPUT Tensor: allowed_pred_num_tokens [1, 11]. 11 elements of type INT64
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(475)]: INPUT Tensor: height [1]. 1 elements of type FLOAT
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(475)]: OUTPUT Tensor: mujoco_qpos [1, 64, 36]. 2304 elements of type FLOAT
+INFO [/workspace/g1_deploy/src/TRTInference/InferenceEngine.cpp(475)]: OUTPUT Tensor: num_pred_frames [1]. 1 elements of type INT32
+✓ Successfully converted ONNX to TRT: planner_planner_sonic.trt
+Input tensors:
+  allowed_pred_num_tokens 1 11 int64
+  context_mujoco_qpos 1 4 36 float
+  facing_direction 1 3 float
+  has_specific_target 1 1 int64
+  height 1 float
+  mode 1 int64
+  movement_direction 1 3 float
+  random_seed 1 int64
+  specific_target_headings 1 4 float
+  specific_target_positions 1 4 3 float
+  target_vel 1 float
+Output tensors:
+  mujoco_qpos 1 64 36 float
+  num_pred_frames 1 int32
+✓ TensorRT planner model loaded successfully!
+Initializing encoder observations...
+✓ Initialized 14 encoder observations (total dim: 1762)
+
+=== Observation Configuration ===
+Active policy observations (runtime order):
+  1. token_state (64D) [offset: 0]
+  2. his_base_angular_velocity_10frame_step1 (30D) [offset: 64]
+  3. his_body_joint_positions_10frame_step1 (290D) [offset: 94]
+  4. his_body_joint_velocities_10frame_step1 (290D) [offset: 384]
+  5. his_last_actions_10frame_step1 (290D) [offset: 674]
+  6. his_gravity_dir_10frame_step1 (30D) [offset: 964]
+
+Policy Summary:
+  Total dimension: 994
+  Model dimension: 994
+  ✓ Dimension match: Configuration is valid!
+
+--- Encoder Observations ---
+  1. encoder_mode_4 (4D) [offset: 0]
+  2. motion_joint_positions_10frame_step5 (290D) [offset: 4]
+  3. motion_joint_velocities_10frame_step5 (290D) [offset: 294]
+  4. motion_root_z_position_10frame_step5 (10D) [offset: 584]
+  5. motion_root_z_position (1D) [offset: 594]
+  6. motion_anchor_orientation (6D) [offset: 595]
+  7. motion_anchor_orientation_10frame_step5 (60D) [offset: 601]
+  8. motion_joint_positions_lowerbody_10frame_step5 (120D) [offset: 661]
+  9. motion_joint_velocities_lowerbody_10frame_step5 (120D) [offset: 781]
+  10. vr_3point_local_target (9D) [offset: 901]
+  11. vr_3point_local_orn_target (12D) [offset: 910]
+  12. smpl_joints_10frame_step1 (720D) [offset: 922]
+  13. smpl_anchor_orientation_10frame_step1 (60D) [offset: 1642]
+  14. motion_joint_positions_wrists_10frame_step1 (60D) [offset: 1702]
+
+Encoder Summary:
+  Total dimension: 1762
+  Model dimension: 1762
+  ✓ Dimension match: Encoder configuration is valid!
+================================
+
+[ZMQEndpointInterface] Connected to localhost:5556 topic='pose'
+[ZMQEndpointInterface] Press ENTER to toggle between loaded motions and ZMQ stream
+Initialized ZMQ endpoint interface
+  Host: localhost:5556
+  Topic: pose
+  Conflate: disabled
+  Initial encoder mode: 0
+[INFO] Initial VR 3-point compliance: [0.5, 0.5, 0]
+[INFO] Initial hand max close ratio: 1 (1.0 = full closure allowed, 0.2 = limited)
+[INFO] Keyboard controls: g/h = left hand +/- 0.1, b/v = right hand +/- 0.1 (range: 0.01-0.5)
+[INFO] Keyboard controls: x/c = hand max close ratio +/- 0.1 (range: 0.2-1.0)
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  Compliance control: DISABLED                                               │
+│  Policy does not observe 'vr_3point_compliance'.                            │
+│  Keyboard controls (g/h/b/v) will be ignored for this policy.               │
+│  To enable, use a compliance-aware policy that observes it natively.        │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Initializing realtime debug socket
+Binding to port: 5557 and topic: g1_debug
+[INFO] Realtime debug socket bound to port: 5557
+Initialized ZMQ output interface
+[ROS2 Output DEBUG] Initializing ROS2
+[ROS2 Output DEBUG] ROS2OutputHandler node 'g1_output_handler' initialized
+[ROS2 Output DEBUG] Created publisher for G1Env/env_state_act
+[ROS2 Output DEBUG] Created publisher for WBCPolicy/robot_config (transient_local)
+Initialized ROS2 output interface
+[ROS2 Output DEBUG] Published robot config with 10 fields
+[ROS2 Output] Published robot config to WBCPolicy/robot_config (immediate)
+Total output interfaces initialized: 2
+[DEBUG] G1Deploy object created successfully!
+[DEBUG] Stopping G1Deploy...
+Delta heading right: -0.1 rad
+Playing motion 0 from frame 0 to end (497 total frames)
+Reset motion 0 to frame 0 (paused)
+Reinitialized base quaternion and reset delta heading to 0
+Stop
+[DEBUG] Waiting for cleanup...
+[DEBUG] Program exiting normally...
+[ROS2 Output DEBUG] ROS2OutputHandler destructor called
+[ROS2 Output DEBUG] Resetting state logger publisher
+[ROS2 Output DEBUG] Resetting robot config publisher
+[ROS2 Output DEBUG] Resetting ROS2 node
+[ROS2 Output DEBUG] ROS2OutputHandler cleanup complete
